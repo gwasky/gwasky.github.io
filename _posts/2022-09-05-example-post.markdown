@@ -1,7 +1,7 @@
 ---
 layout : post
 title : Example Post
-permalink: /:categories/:year/:month/:day/:title/
+permalink: example-post.html
 categories: example work
 ---
 
