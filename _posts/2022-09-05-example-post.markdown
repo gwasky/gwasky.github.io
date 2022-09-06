@@ -2,6 +2,7 @@
 layout : post
 title : Example Post
 permalink: /:categories/:year/:month/:day/:title/
+categories: example work
 ---
 
 
