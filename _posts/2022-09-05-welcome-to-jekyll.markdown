@@ -3,6 +3,9 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2022-09-05 20:27:05 +0300
 categories: jekyll update
+description : welcome to jekyll post
+excerpt : this is an except of my the welcome to the jekyl post
+permalink: /welcome-to-jekyll.html
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
