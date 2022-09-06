@@ -4,7 +4,10 @@
 {% include header.html %}
 <section class="content-container">
     <div class="left-content pull-left">
-        <h2>Deploying a Cost Optimized Resilient Data Platform</h2>
+
+        {% for post in site.posts %}
+        {% if post.title == "Deploying a Cost Optimized Resilient Data Platform" %}
+        <h2><a href="{{post.url}}">{{post.title}}</a></h2>
         <div class="featured-article">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque consectetur dolor dolorem eaque eos et mollitia, neque perferendis rem repellat
                 repellendus reprehenderit repudiandae rerum sequi soluta temporibus vitae?</p>
@@ -15,6 +18,9 @@
                 <time datetime="PT3M">3 min</time>
             </p>
         </div>
+        {% endif %}
+        {% endfor %}
+
         <h3>Heading goes here</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam architecto beatae commodi cupiditate delectus dignissimos exercitationem explicabo facere incidunt
             itaque laborum, odio officia, possimus quae quos repellendus rerum saepe ullam voluptates. Cumque deserunt, dolor eum maiores nemo nisi tempore. Ad aperiam autem,
