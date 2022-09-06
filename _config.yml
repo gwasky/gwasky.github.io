@@ -26,7 +26,7 @@ author:
   twitter: gwasky
 
 hostname: wasukira.com
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://gwasky.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gwasky
 github_username:  gwasky
