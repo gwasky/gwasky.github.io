@@ -8,37 +8,37 @@
         {% for post in site.posts %}
         {% if post.title == "Deploying a Cost Optimized Resilient Data Platform"
         or post.title == "Dimension Modelling; A practical guide"
-        or post.title == "CI/CD Pipelines; A data engineering perspective"
+        or post.title == "CI/CD Pipelines; A data Engineering Perspective"
         %}
         <h2><a href="{{post.url}}">{{post.title}}</a></h2>
         <div class="featured-article">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci atque consectetur dolor dolorem eaque eos et mollitia, neque perferendis rem repellat
-                repellendus reprehenderit repudiandae rerum sequi soluta temporibus vitae?</p>
-            <p class="text-sm">
-                <time datetime="2022-01-17">Jan 17, 2022</time>
-                <span class="separator"></span>
-                <ion-icon name="time-outline"></ion-icon>
-                <time datetime="PT3M">3 min</time>
-            </p>
+            <p>{{post.excerpt}}</p>
+            <p class="text-sm"> {{ post.date | date: '%b' }} {{ post.date | date: '%d' }},{{ post.date | date: '%Y' }} </p>
+<!--            <p class="text-sm">-->
+<!--                <time datetime="2022-01-17">Jan 17, 2022</time>-->
+<!--                <span class="separator"></span>-->
+<!--                <ion-icon name="time-outline"></ion-icon>-->
+<!--                <time datetime="PT3M">3 min</time>-->
+<!--            </p>-->
         </div>
         {% endif %}
         {% endfor %}
 
-        <h3>Heading goes here</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam architecto beatae commodi cupiditate delectus dignissimos exercitationem explicabo facere incidunt
-            itaque laborum, odio officia, possimus quae quos repellendus rerum saepe ullam voluptates. Cumque deserunt, dolor eum maiores nemo nisi tempore. Ad aperiam autem,
-            blanditiis consectetur corporis cupiditate dignissimos dolores facilis, inventore iusto laborum nihil perferendis, placeat quae tempore. Aliquam amet beatae commodi cum
-            cupiditate ipsa labore molestias mollitia nemo nesciunt nisi nobis non nulla numquam officiis possimus provident quae ratione recusandae repellendus sapiente similique
-            suscipit, tenetur ut vero. Ad commodi consectetur exercitationem illum, itaque modi praesentium quae quas recusandae tempora.</p>
-        <div class="another-article">
-            <h3>Another article</h3>
-            <img src="assets/image-2.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet earum esse minima sequi voluptatum. A culpa eligendi error nobis nostrum nulla, placeat quo quos.
-                Culpa deleniti harum ipsa maxime molestiae neque porro, quidem rem sapiente voluptate? Accusantium amet aut blanditiis, corporis debitis dignissimos doloremque
-                eaque est facere impedit inventore iste maiores mollitia natus nihil nisi provident quas saepe sapiente sunt tempora ut veritatis vero. Consequuntur illum nemo
-                placeat similique suscipit velit! Ab adipisci excepturi facere ipsum nisi nostrum quis similique!</p>
-            <button class="btn read-more-btn"> Read More</button>
-        </div>
+<!--        <h3>Heading goes here</h3>-->
+<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam architecto beatae commodi cupiditate delectus dignissimos exercitationem explicabo facere incidunt-->
+<!--            itaque laborum, odio officia, possimus quae quos repellendus rerum saepe ullam voluptates. Cumque deserunt, dolor eum maiores nemo nisi tempore. Ad aperiam autem,-->
+<!--            blanditiis consectetur corporis cupiditate dignissimos dolores facilis, inventore iusto laborum nihil perferendis, placeat quae tempore. Aliquam amet beatae commodi cum-->
+<!--            cupiditate ipsa labore molestias mollitia nemo nesciunt nisi nobis non nulla numquam officiis possimus provident quae ratione recusandae repellendus sapiente similique-->
+<!--            suscipit, tenetur ut vero. Ad commodi consectetur exercitationem illum, itaque modi praesentium quae quas recusandae tempora.</p>-->
+<!--        <div class="another-article">-->
+<!--            <h3>Another article</h3>-->
+<!--            <img src="assets/image-2.jpg" alt="">-->
+<!--            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet earum esse minima sequi voluptatum. A culpa eligendi error nobis nostrum nulla, placeat quo quos.-->
+<!--                Culpa deleniti harum ipsa maxime molestiae neque porro, quidem rem sapiente voluptate? Accusantium amet aut blanditiis, corporis debitis dignissimos doloremque-->
+<!--                eaque est facere impedit inventore iste maiores mollitia natus nihil nisi provident quas saepe sapiente sunt tempora ut veritatis vero. Consequuntur illum nemo-->
+<!--                placeat similique suscipit velit! Ab adipisci excepturi facere ipsum nisi nostrum quis similique!</p>-->
+<!--            <button class="btn read-more-btn"> Read More</button>-->
+<!--        </div>-->
     </div>
     {% include aside.html %}
 </section>

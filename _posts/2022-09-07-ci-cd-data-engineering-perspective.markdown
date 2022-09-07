@@ -2,7 +2,7 @@
 layout: post
 title:  "CI/CD Pipelines; A data Engineering Perspective"
 date:   2022-09-07 09:00:05 +0300
-categories: ci/cd featured
+categories: [ci/cd,featured]
 description : welcome to jekyll post
 excerpt : this is my 50 word except,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aut autem cum deleniti dicta distinctio enim excepturi exercitationem expedita fugit incidunt ipsum, iusto, labore minima mollitia natus officiis pariatur perferendis, porro quae qui quia quo ratione repellat similique ut. Corporis distinctio doloremque fugit laboriosam obcaecati odio, praesentium repudiandae sit?
 permalink: ci-cd-pipelines-a-data-engineering-perspective.html
