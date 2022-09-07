@@ -92,6 +92,11 @@ img {
     width: 700px;
 }
 
+.clients img {
+    height: 100px;
+    width: 300px;
+}
+
 .btn {
     font-family: 'Open Sans', serif;
 }
@@ -325,7 +330,7 @@ footer {
         display: block;
     }
 
-    .nav-links{
+    .nav-links {
         display: none;
     }
 
