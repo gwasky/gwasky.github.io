@@ -3,8 +3,23 @@
 
 {% include header.html %}
 <section class="content-container">
-    <div class="left-content">
+    <div class="left-content blog-post">
         {{content}}
+
+        <br>
+        <br>
+        <!-- Series Links -->
+        {% if page.is_series == true %}
+            <h3>{{ page.series_title | upcase }} SERIES</h3>
+            {% assign posts = site.posts | where: "is_series", true | where: "series_title", page.series_title | sort: 'date' %}
+            {% for post in posts %}
+                {% if post.title == page.title %}
+                    <p class="nav-link bullet-pointer mb-0">{{ post.title }}</p>
+                {% else %}
+                    <a class="nav-link bullet-hash" href="{{ post.url }}">{{ post.title }}</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </div>
     <!--    {% include aside.html %}-->
 </section>

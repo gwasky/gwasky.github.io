@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "Deploying a Cost Optimized Resilient Data Platform"
-date:   2022-09-06 20:27:05 +0300
+title:  "Data Platform Infrastructure Setup - Part 1"
+date:   2022-09-07 20:27:05 +0300
 categories: jekyll update
-description : welcome to jekyll post
+description : Infrastructure setup
 excerpt : this is my 50 word except,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aut autem cum deleniti dicta distinctio enim excepturi exercitationem expedita fugit incidunt ipsum, iusto, labore minima mollitia natus officiis pariatur perferendis, porro quae qui quia quo ratione repellat similique ut. Corporis distinctio doloremque fugit laboriosam obcaecati odio, praesentium repudiandae sit?
-permalink: cost-optimized-data-platform.html
+permalink: data-platform-infrastructure-setup-series-1-part-2.html
+is_series: true
+series_title: "Deploying a Cost Optimized Resilient Data Platform"
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
@@ -17,11 +19,10 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
+{% highlight python %}
+data = [1,2,3,4]
+df = ps.DataFrame(data, columns=["a"])
+
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
