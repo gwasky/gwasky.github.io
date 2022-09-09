@@ -31,7 +31,6 @@ url: "http://gwasky.github.io" # the base hostname & protocol for your site, e.g
 twitter_username: gwasky
 github_username:  gwasky
 
-
 permalink: pretty
 
 # Build settings

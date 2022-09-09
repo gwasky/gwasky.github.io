@@ -10,7 +10,7 @@
         <br>
         <!-- Series Links -->
         {% if page.is_series == true %}
-            <h4>{{ page.series_title | upcase }} SERIES</h4>
+            <h3>{{ page.series_title | upcase }} SERIES</h3>
             {% assign posts = site.posts | where: "is_series", true | where: "series_title", page.series_title | sort: 'date' %}
             {% for post in posts %}
                 {% if post.title == page.title %}
@@ -21,6 +21,6 @@
             {% endfor %}
         {% endif %}
     </div>
-    <!--    {% include aside.html %}-->
+        {% include aside.html %}
 </section>
 {% include footer.html %}
