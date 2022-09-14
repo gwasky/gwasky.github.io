@@ -6,11 +6,21 @@
     <div class="left-content pull-left">
 
         {% for post in site.posts %}
+        {% if post.is_featured == true %}
+        <h2><a href="{{post.url}}">{{post.title}}</a></h2>
+        <div class="featured-article">
+            <p>{{post.excerpt}}</p>
+            <p class="text-sm"> {{ post.date | date: '%b' }} {{ post.date | date: '%d' }}, {{ post.date | date: '%Y' }} </p>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% for post in site.posts %}
         {% if post.is_pinned == true %}
         <h2><a href="{{post.url}}">{{post.title}}</a></h2>
         <div class="featured-article">
             <p>{{post.excerpt}}</p>
-            <p class="text-sm"> {{ post.date | date: '%b' }} {{ post.date | date: '%d' }},{{ post.date | date: '%Y' }} </p>
+            <p class="text-sm"> {{ post.date | date: '%b' }} {{ post.date | date: '%d' }}, {{ post.date | date: '%Y' }} </p>
         </div>
         {% endif %}
         {% endfor %}

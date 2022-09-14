@@ -7,16 +7,16 @@ description : Architecture Requirements Gathering
 excerpt : In this second part of the series, we shall gather information that will help drive the architectural design of the data platform. At the end of this phase, we should have a slight inclination of what kind of data pipeline we will build
 permalink: architecture-requirements-gathering-part-2.html
 is_series: true
-is_pinned: true
-is_featured: true
+is_pinned: false
+is_featured: false
 series_title: "Deploying a Cost Optimized Resilient Data Platform"
 ---
 
 <h3>{{ page.title | upcase }} </h3>
 <br>
 <p>
-    In this second part of the series, we shall gather information that will drive the architectural design of the data platform. At the end of this phase, we should have a slight
-    inclination of what kind of data pipeline we will build
+    In this second part of the series, we shall gather information that will drive the architectural design of the data platform. This is the genesis of our data platform. At the
+    end of this phase, we should have a slight inclination of what kind of data pipeline we will build
 </p>
 <p>
     Our primary role as data engineers is to build data pipelines that deliver data to end users
@@ -62,11 +62,11 @@ series_title: "Deploying a Cost Optimized Resilient Data Platform"
         and who doesn’t </li>
     <li>• Marketing Director is so big on retention, he wants real time updates on usage/access patterns, for instance how long a customer spends looking at a certain page, and
         which page was clicked after, did that session convert into a sale?</li>
-    <li>• Business Analysts (BAs) need access to sales raw data, customer complaints and their query resolution time</li>
-    <li>• Customer needs to view some sort of statement on demand</li>
-    <li>• CTO and Scrum master needs to know bugs being reported, how long it took to fix them</li>
-    <li>• CTO needs to know the application traffic access patterns</li>
-    <li>• Data Scientist ?? List is exhaustive</li>
+    <li>• Business Analysts (BAs) need access to sales raw data, customer complaints and query resolution time</li>
+    <li>• Customer needs to view some sort of statement on demand through the mobile app</li>
+    <li>• CTO and Scrum master need to know bugs being reported, how long it took to fix them</li>
+    <li>• CTO also needss know the application traffic access patterns</li>
+    <li>• Data Scientist ?? His/Her List is exhaustive</li>
 </ul>
 <h3>What governance policies should be in place?</h3>
 <ul class="list-unstyled">
@@ -74,39 +74,42 @@ series_title: "Deploying a Cost Optimized Resilient Data Platform"
     <li>• CFO, CTO, Marketing Director, Investment Analyst should be able to view all datasets</li>
     <li>• Sales Agents should only view sales data</li>
 </ul>
+<p>Remember to always follow the Principle of Least Privilege</p>
 <h3>Compliance</h3>
 <ul class="list-unstyled">
-    <li>• Restrictions on the geographic location of the data, there are no restrictions</li>
+    <li>• Government Restrictions on the geographic location of the data, there are no restrictions for out hypothetical case</li>
 </ul>
 <h3>What is the budget?</h3>
 <ul class="list-unstyled">
     <li>• CTO tells you, that the monthly budget for the data platform is $500, yea we are going to build a cloud native data platform that roughly costs this much</li>
 </ul>
 <h3>Data Sources – What systems are used to capture the data</h3>
-<p>With the above information, we know the systems we are going to extract this data from</p>
+<p>With the above information, we then move onto identifying the the systems from which to extract this data from</p>
 <p>In Data Engineering terminology, Operations/transaction data is referred to as System of Record (SOR) data.</p>
 <p>So, the SOR data sources will be:</p>
 <ul class="list-unstyled">
-    <li>• CRM to serve the customer complaints and prospects queries, this runs on a MySQL database</li>
-    <li>• Accounting System that will serve the CFO & Investment Analyst queries exposes the requirement source data over a REST API</li>
-    <li>• Business Support System(BSS) – this is a system customized to meet business operations, for a bank, it’s a banking system, for a micro-lending institution, it’s a
-        loan management system (LMS), for a supermarket it’s a Point of Sale (POS). The BSS will serve the Sales, BA queries and runs on a PostgreSQL DB</li>
+    <li>• CRM to serve the customer complaints and prospects queries, we note that this runs on a MySQL database</li>
+    <li>• Accounting System that will serve the CFO & Investment Analyst queries, we also note that it exposes the required source data over a REST API</li>
+    <li>• Business Support System(BSS) – this is a system (could be built inhouse) custom to our business domain, for a bank, it’s a banking system,
+        for a micro-lending institution, it’s a loan management system (LMS), for a supermarket it’s a Point of Sale (POS). The BSS will serve the Sales, BA queries and runs on
+        a PostgreSQL DB</li>
     <li>• If the BSS is behind an ALB(WAF) or API gateway, we will turn on ALB/WAF logging and have them persisted to AWS S3, these logs should address the traffic queries</li>
-    <li>• The session data will be captured by a NoSQL persistent storage backed database</li>
+    <li>• The session data will be persisted into a NoSQL storage store</li>
 </ul>
 
-<p>So, we have relational and nonrelational models, relational models can represent data in many to many relationships, our ERP, CRM, and BSS have entities with these kinds of
-    relationships and therefore store their data in these relational models, RDBMs are implementations of the relational model, we will have a Postgres DB and MySQL DB as our RDBMs</p>
+<p>So, we have relational and nonrelational models, our ERP, CRM, and BSS are backed by relational data stores, and these are Postgres DB and MySQL DB</p>
 
-<p>The nonrelational “NoSQL” data stores have 2 categories, Document databases and Graph databases, with document DBs data is represented as self-contained, relationships between one document and another are rare</p>
-<p>Graph databases will be used later in this series, but they are used in use-cases where almost everything is related to anything</p>
+<p>The nonrelational “NoSQL” data stores have 2 categories, Document databases and Graph databases, with document DBs data is represented as self-contained; relationships
+    between one document and another are rare in this case</p>
+<p>Graph databases will be used later in this series, but they are used in applications where almost everything is related to anything</p>
 
-<p>Our data sources are.</p>
+<p>Therefore data sources are.</p>
 <ul class="list-unstyled">
     <li>• CRM – MySQL DB</li>
     <li>• Accounting System – Rest API</li>
     <li>• BSS – PostgreSQL DB</li>
     <li>• ALB/WAF logs – S3 Bucket</li>
+    <li>• Session data – Elasticsearch</li>
 </ul>
 
 <p>
